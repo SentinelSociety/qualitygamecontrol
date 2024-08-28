@@ -37,18 +37,48 @@ into an ISO file.
         3) Change `Version` to `2.0`
 5) Boot up the VM and follow the Windows 11 installation wizard and initial setup wizard.
 6) Install all software updates via `Windows Update`.
-7) Install all required software.
+7) Install all required software (manually or automated via Powershell).
 8) Apply provisioning packages to configure and secure the system (after initial setup):
 
     https://learn.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-apply-package
 
-9) Apply security configurations via PowerSTIG.
+9) Apply security configurations (STIG) via PowerSTIG.
 
 10) Run `sysprep` (as administrator) to remove unique information so that the image can be reused on a different computer.
 
     `C:\Windows\System32\Sysprep\sysprep.exe /oobe /generalize /shutdown`
 
-# PowerSTIG and DSC
+# DSC for Linux
+
+1) Install Linux packages (on Linux)
+
+    https://learn.microsoft.com/en-us/linux/packages
+
+2) Install OMI (on Linux)
+
+    https://github.com/Microsoft/omi
+
+3) Install DSC (on Linux)
+
+    https://learn.microsoft.com/en-us/powershell/dsc/getting-started/lnxgettingstarted?view=dsc-1.1
+
+4) Upgrade Powershell (on Windows)
+
+5) Enable basic authentication (on Windows)
+
+    ```
+    winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+    winrm set winrm/config/service/auth '@{Basic="true"}'
+    ```
+
+    Note that this is to ease development and must be disabled later.
+    
+
+4) Connect Linux to Windows (from Linux)
+
+    `/opt/omi/bin/omicli ei root/cimv2 Win32_Environment --auth Basic --hostname 192.168.122.234 -u rse -p 0captain --port 5985`
+
+# DSC and PowerSTIG
 
 1) Install PowerSTIG
 
