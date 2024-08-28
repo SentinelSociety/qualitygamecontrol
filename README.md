@@ -98,6 +98,11 @@ into an ISO file.
 
  # PowerSTIG Workflow
 
+    1) Compile PowerSTIG Configuration
+    2) Apply PowerSTIG Configuration
+
+    `Start-DscConfiguration .\WindowsClient -w -v -f`
+
     https://github.com/Microsoft/PowerStig/wiki/GettingStarted
 
 # Troubleshooting
