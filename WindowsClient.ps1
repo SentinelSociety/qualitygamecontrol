@@ -13,20 +13,20 @@ configuration WindowsClient
     {
         WindowsClient BaseLine
         {
-            OsVersion   = '11'
-            #DomainName = 'your.domain'
-            #ForestName = 'your.domain'
-            #Exception   = @{
-                #'V-1075'= @{'ValueData'='1'}
-            #}
-            #OrgSettings = @{
+            OsVersion = '11'
+            # DomainName = 'your.domain'
+            # ForestName = 'your.domain'
+            # Exception   = @{
+                # 'V-1075'= @{'ValueData'='1'}
+            # }
+            # OrgSettings = @{
                 # 'V-205909' = @{
                 #     OptionValue = 'xAdmin'
                 # }
                 # 'V-205910' = @{
                 #     OptionValue = 'Disabled_Guest'
                 # }
-            #}
+            # }
             SkipRule = @(
                 'V-253260.a',  # BitLocker PIN for pre-boot auth
                 'V-253260.b',  # BitLocker PIN for pre-boot auth
