@@ -1,0 +1,31 @@
+---
+- name: Install Required Software on Windows
+  hosts: windows
+  tasks:
+
+    - name: Create temporary directory
+      win_file:
+        path: C:\temp
+        state: directory
+
+    - name: Download QGC installer
+      win_get_url:
+        url: https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl-installer.exe
+        dest: C:\temp\QGroundControl-installer.exe
+
+    - name: Download Mission Planner installer
+      win_get_url:
+        url: https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi
+        dest: C:\temp\MissionPlanner-latest.msi
+
+    - name: Install QGC
+      win_command: C:\temp\QGroundControl-installer.exe /quiet
+      args:
+        chdir: C:\temp
+
+    - name: Install Mission Planner
+      win_command: C:\temp\MissionPlanner-latest.msi /quiet
+      args:
+        chdir: C:\temp
+
+        
