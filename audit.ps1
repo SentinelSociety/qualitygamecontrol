@@ -1,8 +1,8 @@
-$audit = Test-DscConfiguration -ReferenceConfiguration .\WindowsClient\localhost.mof
+$audit = Test-DscConfiguration -ReferenceConfiguration .\dsc\WindowsClient\localhost.mof
 # View compliant settings
 #$audit.ResourcesInDesiredState | Out-GridView
-$audit.ResourcesInDesiredState | Tee-Object -FilePath .\WindowsClient\rids.txt
+$audit.ResourcesInDesiredState | Tee-Object -FilePath .\dsc\WindowsClient\rids.txt
 
 # View non-compliant settings
 #$audit.ResourcesNotInDesiredState | Out-GridView
-$audit.ResourcesNotInDesiredState | Tee-Object -FilePath .\WindowsClient\rnids.txt
+$audit.ResourcesNotInDesiredState | Tee-Object -FilePath .\dsc\WindowsClient\rnids.txt

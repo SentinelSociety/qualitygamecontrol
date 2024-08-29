@@ -105,6 +105,12 @@ into an ISO file.
 
     https://github.com/Microsoft/PowerStig/wiki/GettingStarted
 
+# Steps to setup Ansible
+
+`pip install pywinrm`
+
+`ansible-playbook -i ansible/inventory.ini ansible/roles/windows/tasks/windows-setup.yml`
+
 # Troubleshooting
 
 ## Using Windows Configuration Designer
@@ -126,4 +132,12 @@ non-domain devices, and specific use cases.
 - User-specific applications cannot be installed.
 
     `get-appxpackage -allusers -name "microsoft.onedrivesync" | Remove-appxpackage`
-    `get-appxpackage -allusers -name "microsoft.bingsearch" | Remove-appxpackage`   
+    `get-appxpackage -allusers -name "microsoft.bingsearch" | Remove-appxpackage`
+
+# TODO
+1) Fix QGroundControl.exe launching after applying WindowsClient DSC Configuration
+
+Event Viewer:
+Audit Failure; Microsoft Windows Security; Sensitive Privilege Use;
+Process Name: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+Service Request Information; Privileges: SeTcbPrivilege

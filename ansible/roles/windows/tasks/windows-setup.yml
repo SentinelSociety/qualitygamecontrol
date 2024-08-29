@@ -1,0 +1,77 @@
+---
+- name: Install Required Software on Windows
+  hosts: windows
+  tasks:
+
+# Install Python 3 on Windows
+    - name: Download Python installer
+      win_get_url:
+        url: https://www.python.org/ftp/python/3.9.12/python-3.9.12-amd64.exe
+        dest: C:\temp\python-3.9.12-amd64.exe
+
+    - name: Install Python
+      win_command: C:\temp\python-3.9.12-amd64.exe /quiet InstallAllUsers=1 PrependPath=1
+      args:
+        chdir: C:\temp
+
+    - name: Verify Python installation
+      win_command: python --version
+      register: python_version
+
+    - name: Show Python version
+      debug:
+        msg: "Python version installed: {{ python_version.stdout }}"
+        
+# Install Chocolatey and Run Windows Update
+    - name: Install Chocolatey
+      win_chocolatey:
+        name: chocolatey
+        state: present
+        version: 0.10.15  # Specify the desired version if needed
+
+    - name: Install windows-update package
+      win_chocolatey:
+        name: windows-update
+        state: present
+
+    - name: Run Windows Update
+      win_command: choco upgrade windows-update -y
+      register: update_result
+
+    - name: Show Windows Update result
+      debug:
+        msg: "Windows Update result: {{ update_result.stdout }}"
+
+# Install ADK and PE Add-ons on Windows
+    - name: Create temporary directory
+      win_file:
+        path: C:\temp
+        state: directory
+
+    - name: Download ADK installer
+      win_get_url:
+        url: https://download.microsoft.com/download/2/1/8/218ACCF2-7B72-4A4A-A882-418F3C90B5B7/ADKSetup.exe
+        dest: C:\temp\ADKSetup.exe
+
+    - name: Download Windows PE Add-ons installer
+      win_get_url:
+        url: https://download.microsoft.com/download/4/3/E/43E9AA95-25E8-42CF-8A90-F87CF254D278/WinPE_Addons_amd64.exe
+        dest: C:\temp\WinPE_Addons_amd64.exe
+
+    - name: Install ADK
+      win_command: C:\temp\ADKSetup.exe /quiet /components DeploymentTools,AssessmentTools /install
+      args:
+        chdir: C:\temp
+
+    - name: Install Windows PE Add-ons
+      win_command: C:\temp\WinPE_Addons_amd64.exe /quiet /components WinPE-HTA,WinPE-Scripting,WinPE-WMI
+      args:
+        chdir: C:\temp
+
+    - name: Verify ADK installation
+      win_command: "powershell -command \"Get-WindowsFeature | Where-Object { $_.Name -like 'ADK*' }\""
+      register: adk_features
+
+    - name: Show ADK installation status
+      debug:
+        msg: "Installed ADK features: {{ adk_features.stdout }}"
