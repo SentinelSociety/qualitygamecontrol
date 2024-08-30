@@ -3,23 +3,27 @@
   hosts: windows
   tasks:
 
-    - name: Set basic WinRM settings
-      ansible.windows.win_powershell:
-        script: |
-          winrm quickconfig -q
+    # - name: Set basic WinRM settings
+    #   ansible.windows.win_powershell:
+    #     script: |
+    #       winrm quickconfig -q
 
-    - name: Get the name of the public profile
-      ansible.windows.win_powershell:
-        script: |
-          $profile = Get-NetConnectionProfile
-          $profile | Select-Object -ExpandProperty Name
-      register: net_profile
+    # - name: Get the name of the public profile
+    #   ansible.windows.win_powershell:
+    #     script: |
+    #       $profile = Get-NetConnectionProfile
+    #   register: net_profile
 
-    - name: Update the InterfaceAlias parameter with the name of the profile from above
-      ansible.windows.win_powershell:
-        script: |
-          Set-NetConnectionProfile -InterfaceAlias '{{ net_profile.stdout }}' -NetworkCategory Private
+    # - name: Show public profile
+    #   debug:
+    #     msg: "Public profile: {{ net_profile }}"
+
+    # - name: Update the InterfaceAlias parameter with the name of the profile from above
+    #   ansible.windows.win_powershell:
+    #     script: |
+    #       Set-NetConnectionProfile -InterfaceAlias '{{ net_profile.output }}' -NetworkCategory Private
 
     - name: Update the WSMAN MaxEnvelopeSizekb
       ansible.windows.win_powershell:
-        Set-Item -Path WSMan:\localhost\MaxEnvelopeSizekb -Value 8192
+        script: |
+          Set-Item -Path WSMan:\localhost\MaxEnvelopeSizekb -Value 8192
