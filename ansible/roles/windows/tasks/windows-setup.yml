@@ -63,3 +63,25 @@
       win_command: C:\temp\WinPE_Addons_amd64.exe /quiet
       args:
         chdir: C:\temp
+
+# Install PowerSTIG
+
+    - name: Ensure NuGet provider is installed
+      win_psmodule:
+        name: PowerShellGet
+        state: present
+
+    - name: Install NuGet provider if not already installed
+      ansible.windows.win_powershell:
+        script: |
+          Install-PackageProvider -Name NuGet -Force
+
+    - name: Set PowerShell Execution Policy
+      ansible.windows.win_powershell:
+        script: |
+          Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+    - name: Install PowerStig PowerShell Module
+      ansible.windows.win_powershell:
+        script: |
+          Install-Module -Name PowerStig -Force -Scope CurrentUser
