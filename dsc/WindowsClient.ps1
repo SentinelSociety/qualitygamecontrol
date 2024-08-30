@@ -41,6 +41,7 @@ configuration WindowsClient
                 'V-253418', # Disable Basic auth for WinRM
                 'V-253419' # Disallow unencrypted traffic for WinRM
             )
+            SkipRule = $SkipRule + $ExternalSkipRules
         }
     }
 }
