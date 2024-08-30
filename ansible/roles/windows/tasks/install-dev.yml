@@ -1,0 +1,15 @@
+---
+- name: Install Git, VS Code, and set up Ansible on Windows
+  hosts: windows
+  tasks:
+
+    - name: Install Git
+      win_chocolatey:
+        name: git
+        state: present
+
+    # TODO Fix
+    # - name: Install Visual Studio Code
+    #   win_chocolatey:
+    #     name: visualstudio-code
+    #     state: present

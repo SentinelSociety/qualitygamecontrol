@@ -27,5 +27,3 @@
     #   win_command: C:\temp\MissionPlanner-latest.msi /quiet
     #   args:
     #     chdir: C:\temp
-
-        

@@ -113,6 +113,8 @@ into an ISO file.
 
 `ansible-playbook -i ansible/inventory.ini ansible/roles/windows/tasks/install-software.yml`
 
+`ansible-playbook -i ansible/inventory.ini ansible/roles/windows/tasks/install-dev.yml`
+
 Recommendation: Take a snapshot NOW!!!
 
 `virsh dumpxml win11`
