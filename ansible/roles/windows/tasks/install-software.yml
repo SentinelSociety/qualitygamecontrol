@@ -18,14 +18,14 @@
         url: https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi
         dest: C:\temp\MissionPlanner-latest.msi
 
-    - name: Install QGC
-      win_command: C:\temp\QGroundControl-installer.exe /quiet
-      args:
-        chdir: C:\temp
+    # - name: Install QGC
+    #   win_command: C:\temp\QGroundControl-installer.exe /quiet
+    #   args:
+    #     chdir: C:\temp
 
-    - name: Install Mission Planner
-      win_command: C:\temp\MissionPlanner-latest.msi /quiet
-      args:
-        chdir: C:\temp
+    # - name: Install Mission Planner
+    #   win_command: C:\temp\MissionPlanner-latest.msi /quiet
+    #   args:
+    #     chdir: C:\temp
 
         

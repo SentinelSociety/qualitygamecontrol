@@ -113,6 +113,14 @@ into an ISO file.
 
 `ansible-playbook -i ansible/inventory.ini ansible/roles/windows/tasks/install-software.yml`
 
+Recommendation: Take a snapshot NOW!!!
+
+`virsh dumpxml win11`
+
+`sudo qemu-img snapshot -c snapshot_name /path/to/your/pflash-image`
+`sudo qemu-img snapshot -c baseline /var/lib/libvirt/images/win11.qcow2`
+`sudo qemu-img snapshot -l /var/lib/libvirt/images/win11.qcow2`
+
 # Troubleshooting
 
 ## Using Windows Configuration Designer
