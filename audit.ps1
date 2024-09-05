@@ -1,4 +1,4 @@
-$dsc= ".\dsc\Edge"
+$dsc= ".\dsc\WindowsDefender"
 
 $audit = Test-DscConfiguration -ReferenceConfiguration $dsc\localhost.mof
 # View compliant settings
