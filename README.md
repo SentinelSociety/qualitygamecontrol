@@ -102,6 +102,7 @@ into an ISO file.
     2) Apply PowerSTIG Configuration
 
     `Start-DscConfiguration .\WindowsClient -w -v -f`
+    `Start-DscConfiguration .\Edge -w -v -f`
 
     https://github.com/Microsoft/PowerStig/wiki/GettingStarted
 

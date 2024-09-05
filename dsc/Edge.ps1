@@ -13,6 +13,7 @@ configuration Edge
     {
         Edge BaseLine
         {
+            # BrowserVersion = ''
             # StigVersion = ''
             # Exception   = @{
                 # 'V-1075'= @{'ValueData'='1'}

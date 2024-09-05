@@ -1,8 +1,10 @@
-$audit = Test-DscConfiguration -ReferenceConfiguration .\dsc\WindowsClient\localhost.mof
+$dsc= ".\dsc\Edge"
+
+$audit = Test-DscConfiguration -ReferenceConfiguration $dsc\localhost.mof
 # View compliant settings
 #$audit.ResourcesInDesiredState | Out-GridView
-$audit.ResourcesInDesiredState | Tee-Object -FilePath .\dsc\WindowsClient\rids.txt
+$audit.ResourcesInDesiredState | Tee-Object -FilePath $dsc\rids.txt
 
 # View non-compliant settings
 #$audit.ResourcesNotInDesiredState | Out-GridView
-$audit.ResourcesNotInDesiredState | Tee-Object -FilePath .\dsc\WindowsClient\rnids.txt
+$audit.ResourcesNotInDesiredState | Tee-Object -FilePath $dsc\rnids.txt
