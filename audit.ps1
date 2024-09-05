@@ -1,4 +1,5 @@
-$dsc= ".\dsc\WindowsDefender"
+# $dsc= ".\dsc\WindowsDefender"
+$dsc= ".\dsc\WindowsFirewall"
 
 $audit = Test-DscConfiguration -ReferenceConfiguration $dsc\localhost.mof
 # View compliant settings
