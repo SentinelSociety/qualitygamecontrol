@@ -1,6 +1,7 @@
 # $dsc= ".\dsc\WindowsDefender"
 #$dsc= ".\dsc\WindowsFirewall"
-$dsc= ".\dsc\DotNetFramework"
+#$dsc= ".\dsc\DotNetFramework"
+$dsc= ".\dsc\Chrome"
 
 $audit = Test-DscConfiguration -ReferenceConfiguration $dsc\localhost.mof
 # View compliant settings

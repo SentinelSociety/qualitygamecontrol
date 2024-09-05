@@ -106,6 +106,7 @@ into an ISO file.
     `Start-DscConfiguration .\WindowsDefender -w -v -f`
     `Start-DscConfiguration .\WindowsFirewall -w -v -f`
     `Start-DscConfiguration .\DotNetFramework -w -v -f`
+    `Start-DscConfiguration .\Chrome -w -v -f`
 
     https://github.com/Microsoft/PowerStig/wiki/GettingStarted
 
