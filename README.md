@@ -103,6 +103,7 @@ into an ISO file.
 
     `Start-DscConfiguration .\WindowsClient -w -v -f`
     `Start-DscConfiguration .\Edge -w -v -f`
+    `Start-DscConfiguration .\WindowsDefender -w -v -f`
 
     https://github.com/Microsoft/PowerStig/wiki/GettingStarted
 
