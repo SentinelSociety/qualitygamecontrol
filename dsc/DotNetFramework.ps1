@@ -14,7 +14,7 @@ configuration DotNetFramework
         DotNetFramework BaseLine
         {
             FrameworkVersion = '4'
-            # StigVersion = ''
+            StigVersion = '2.4'
             # Exception   = @{
                 # 'V-1075'= @{'ValueData'='1'}
             # }
