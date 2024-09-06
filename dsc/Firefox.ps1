@@ -1,4 +1,4 @@
-configuration Edge
+configuration Firefox
 {
     param
     (
@@ -11,10 +11,10 @@ configuration Edge
 
     Node $NodeName
     {
-        Edge BaseLine
+        Firefox FireFoxSettings
         {
-            # BrowserVersion = ''
-            # StigVersion = ''
+            # InstallDirectory = ''
+            StigVersion = '6.5'
             # Exception   = @{
                 # 'V-1075'= @{'ValueData'='1'}
             # }
@@ -32,6 +32,4 @@ configuration Edge
     }
 }
 
-Edge
-
-# WARNING: MS_Edge_STIG: V-235719/RegistryRule/low contains an empty Organizational Value, setting rule as Skipped
+Firefox

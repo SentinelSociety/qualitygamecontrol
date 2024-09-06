@@ -1,4 +1,4 @@
-configuration Example
+configuration WindowsFirewall
 {
     param
     (
@@ -13,7 +13,7 @@ configuration Example
     {
         WindowsFirewall EnterpriseFirewallPolicy
         {
-            # StigVersion = ''
+            StigVersion = '2.2'
             # Exception   = @{
                 # 'V-1075'= @{'ValueData'='1'}
             # }
@@ -31,4 +31,4 @@ configuration Example
     }
 }
 
-Example
+WindowsFirewall

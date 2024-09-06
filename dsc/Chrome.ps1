@@ -1,4 +1,4 @@
-configuration Edge
+configuration Chrome
 {
     param
     (
@@ -11,7 +11,7 @@ configuration Edge
 
     Node $NodeName
     {
-        Edge BaseLine
+        Chrome ChromeSettings
         {
             # BrowserVersion = ''
             # StigVersion = ''
@@ -32,6 +32,11 @@ configuration Edge
     }
 }
 
-Edge
+Chrome
 
-# WARNING: MS_Edge_STIG: V-235719/RegistryRule/low contains an empty Organizational Value, setting rule as Skipped
+# WARNING: Google_Chrome_Current_Windows: V-221563/RegistryRule/medium contains an empty Organizational Value, setting
+# rule as Skipped
+# WARNING: Google_Chrome_Current_Windows: V-221564/RegistryRule/medium contains an empty Organizational Value, setting
+# rule as Skipped
+# WARNING: Google_Chrome_Current_Windows: V-221565/RegistryRule/medium contains an empty Organizational Value, setting
+# rule as Skipped
