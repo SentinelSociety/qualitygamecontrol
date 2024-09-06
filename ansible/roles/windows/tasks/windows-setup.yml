@@ -81,7 +81,7 @@
         script: |
           Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
-    - name: Install PowerStig PowerShell Module
+    - name: Install PowerSTIG PowerShell Module
       ansible.windows.win_powershell:
         script: |
-          Install-Module -Name PowerStig -Force -Scope CurrentUser
+          Install-Module -Name PowerSTIG -Force -Scope CurrentUser

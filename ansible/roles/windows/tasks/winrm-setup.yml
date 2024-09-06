@@ -27,3 +27,8 @@
       ansible.windows.win_powershell:
         script: |
           Set-Item -Path WSMan:\localhost\MaxEnvelopeSizekb -Value 8192
+
+    - name: Restart WinRM
+      ansible.windows.win_powershell:
+        script: |
+          Restart-Service WinRM

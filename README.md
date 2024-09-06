@@ -111,6 +111,8 @@ into an ISO file.
 
 `ansible-playbook -i ansible/inventory.ini ansible/roles/windows/tasks/windows-setup.yml`
 
+`ansible-playbook -i ansible/inventory.ini ansible/roles/windows/tasks/winrm-setup.yml`
+
 `ansible-playbook -i ansible/inventory.ini ansible/roles/windows/tasks/install-software.yml`
 
 `ansible-playbook -i ansible/inventory.ini ansible/roles/windows/tasks/install-dev.yml`
