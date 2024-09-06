@@ -124,6 +124,12 @@ into an ISO file.
 
     https://github.com/Microsoft/PowerStig/wiki/GettingStarted
 
+# Custom DSC
+
+    `Install-Module -Name xNetworking`
+
+    `Start-DscConfiguration .\CreateFirewallRule\ -w -v -f`
+
 # Steps to setup Ansible
 
 `pip install pywinrm`
