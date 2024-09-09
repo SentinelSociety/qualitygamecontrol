@@ -31,16 +31,16 @@ configuration WindowsClient
                     ValueData = '2' # Require Virtualization Based Security
                 }
                 'V-253427.a' = @{
-                    ValueData = 'LocalMachine\Root' # DOD Root CA 3
+                    Location = 'LocalMachine\Root' # DOD Root CA 3
                 }
                 'V-253427.b' = @{
-                    ValueData = 'LocalMachine\Root' # DOD Root CA 4
+                    Location = 'LocalMachine\Root' # DOD Root CA 4
                 }
                 'V-253427.c' = @{
-                    ValueData = 'LocalMachine\Root' # DOD Root CA 5
+                    Location = 'LocalMachine\Root' # DOD Root CA 5
                 }
                 'V-253427.d' = @{
-                    ValueData = 'LocalMachine\Root' # DOD Root CA 6
+                    Location = 'LocalMachine\Root' # DOD Root CA 6
                 }
             }
             SkipRule = @(
