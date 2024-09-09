@@ -11,7 +11,7 @@ configuration DotNetFramework
 
     Node $NodeName
     {
-        DotNetFramework BaseLine
+        DotNetFramework DotNetSettings
         {
             FrameworkVersion = '4'
             StigVersion = '2.4'

@@ -11,21 +11,18 @@ configuration Edge
 
     Node $NodeName
     {
-        Edge BaseLine
+        Edge EdgeSettings
         {
             # BrowserVersion = ''
-            # StigVersion = ''
+            StigVersion = '1.8'
             # Exception   = @{
                 # 'V-1075'= @{'ValueData'='1'}
             # }
-            # OrgSettings = @{
-                # 'V-205909' = @{
-                #     OptionValue = 'xAdmin'
-                # }
-                # 'V-205910' = @{
-                #     OptionValue = 'Disabled_Guest'
-                # }
-            # }
+            OrgSettings = @{
+                'V-235719' = @{
+                    ValueData = 'ProxyMode' # The proxy setting used by MS Edge
+                }
+            }
             # SkipRule = @(
             # )
         }
@@ -33,5 +30,3 @@ configuration Edge
 }
 
 Edge
-
-# WARNING: MS_Edge_STIG: V-235719/RegistryRule/low contains an empty Organizational Value, setting rule as Skipped
