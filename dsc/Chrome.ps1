@@ -20,13 +20,13 @@ configuration Chrome
             # }
             OrgSettings = @{
                 'V-221563' = @{
-                    OptionValue = '' # a list of administrator-approved extension IDs
-                },
+                    ValueData = '' # a list of administrator-approved extension IDs
+                }
                 'V-221564' = @{
-                    OptionValue = 'Google Encrypted' # an organization approved encrypted search provider
-                },
+                    ValueData = 'Google Encrypted' # an organization approved encrypted search provider
+                }# a list of administrator-approved extension IDs
                 'V-221565' = @{
-                    OptionValue = 'https://www.google.com/search?q={searchTerms}' # an organization-approved encrypted search string
+                    ValueData = 'https://www.google.com/search?q={searchTerms}' # an organization-approved encrypted search string
                 }
             }
             # SkipRule = @(
@@ -36,10 +36,3 @@ configuration Chrome
 }
 
 Chrome
-
-# WARNING: Google_Chrome_Current_Windows: V-221563/RegistryRule/medium contains an empty Organizational Value, setting
-# rule as Skipped
-# WARNING: Google_Chrome_Current_Windows: V-221564/RegistryRule/medium contains an empty Organizational Value, setting
-# rule as Skipped
-# WARNING: Google_Chrome_Current_Windows: V-221565/RegistryRule/medium contains an empty Organizational Value, setting
-# rule as Skipped
