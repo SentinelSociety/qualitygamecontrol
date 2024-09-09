@@ -14,19 +14,23 @@ configuration WindowsClient
         WindowsClient BaseLine
         {
             OsVersion = '11'
+            StigVersion = '1.6'
             # DomainName = 'your.domain'
             # ForestName = 'your.domain'
             # Exception   = @{
                 # 'V-1075'= @{'ValueData'='1'}
             # }
-            # OrgSettings = @{
-                # 'V-205909' = @{
-                #     OptionValue = 'xAdmin'
-                # }
-                # 'V-205910' = @{
-                #     OptionValue = 'Disabled_Guest'
-                # }
-            # }
+            OrgSettings = @{
+                'V-253261' = @{
+                    ValueData = '0x00000006' # BitLocker PIN minimum length
+                }
+                'V-253369.a' = @{
+                    ValueData = '2' # Require Secure Boot
+                }
+                'V-253369.b' = @{
+                    ValueData = '2' # Require Virtualization Based Security
+                }
+            }
             SkipRule = @(
 
                 # AC
@@ -99,10 +103,7 @@ configuration WindowsClient
 
 WindowsClient
 
-# WARNING: Microsoft_Windows_11_STIG: V-253260.a/RegistryRule/high will be Skipped as specified by the configuration
-# WARNING: Microsoft_Windows_11_STIG: V-253260.b/RegistryRule/high will be Skipped as specified by the configuration
-# WARNING: Microsoft_Windows_11_STIG: V-253261/RegistryRule/medium contains an empty Organizational Value, setting rule
-# as Skipped
+
 # WARNING: Microsoft_Windows_11_STIG: V-253369.a/RegistryRule/medium will be Skipped as specified by the configuration
 # WARNING: Microsoft_Windows_11_STIG: V-253369.b/RegistryRule/medium will be Skipped as specified by the configuration
 # WARNING: Microsoft_Windows_11_STIG: V-253370/RegistryRule/high will be Skipped as specified by the configuration
