@@ -11,7 +11,7 @@ configuration WindowsFirewall
 
     Node $NodeName
     {
-        WindowsFirewall EnterpriseFirewallPolicy
+        WindowsFirewall FirewallSettings
         {
             StigVersion = '2.2'
             # Exception   = @{

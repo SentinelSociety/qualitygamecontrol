@@ -22,7 +22,7 @@ configuration WindowsClient
             # }
             OrgSettings = @{
                 'V-253261' = @{
-                    ValueData = '0x00000006' # BitLocker PIN minimum length
+                    ValueData = '6' # BitLocker PIN minimum length
                 }
                 'V-253369.a' = @{
                     ValueData = '2' # Require Secure Boot
@@ -104,8 +104,6 @@ configuration WindowsClient
 WindowsClient
 
 
-# WARNING: Microsoft_Windows_11_STIG: V-253369.a/RegistryRule/medium will be Skipped as specified by the configuration
-# WARNING: Microsoft_Windows_11_STIG: V-253369.b/RegistryRule/medium will be Skipped as specified by the configuration
 # WARNING: Microsoft_Windows_11_STIG: V-253370/RegistryRule/high will be Skipped as specified by the configuration
 # WARNING: Microsoft_Windows_11_STIG: V-253371/RegistryRule/medium will be Skipped as specified by the configuration
 # WARNING: Microsoft_Windows_11_STIG: V-253377/RegistryRule/medium will be Skipped as specified by the configuration
