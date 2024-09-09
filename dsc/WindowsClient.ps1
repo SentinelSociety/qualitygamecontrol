@@ -30,70 +30,40 @@ configuration WindowsClient
                 'V-253369.b' = @{
                     ValueData = '2' # Require Virtualization Based Security
                 }
-                'V-253427.a' = @{
-                    Location = 'LocalMachine\Root' # DOD Root CA 3
+                # Use the InstallRoot tool from https://cyber.mil/pki-pke/tools-configuration-files to install these files
+                # 'V-253427.a' = @{
+                #     Location = 'cert:LocalMachine\Root' # DOD Root CA 3 (Certificate Pfx file)
+                # }
+                # 'V-253427.b' = @{
+                #     Location = 'cert:LocalMachine\Root' # DOD Root CA 4 (Certificate Pfx file)
+                # }
+                # 'V-253427.c' = @{
+                #     Location = 'cert:LocalMachine\Root' # DOD Root CA 5 (Certificate Pfx file)
+                # }
+                # 'V-253427.d' = @{
+                #     Location = 'cert:LocalMachine\Root' # DOD Root CA 6 (Certificate Pfx file)
+                # }
+                # 'V-253429.a' = @{
+                #     Location = 'cert:LocalMachine\disallowed' # DOD Interoperability Root CA 2 (Certificate Pfx file)
+                # }
+                # 'V-253429.b' = @{
+                #     Location = 'cert:LocalMachine\disallowed' # DOD Interoperability Root CA 2 (Certificate Pfx file)
+                # }
+                # 'V-253430.a' = @{
+                #     Location = 'cert:LocalMachine\disallowed' # DOD CCEB Interoperability Root CA 2 (Certificate Pfx file)
+                # }
+                # 'V-253430.b' = @{
+                #     Location = 'cert:LocalMachine\disallowed' # DOD CCEB Interoperability Root CA 2 (Certificate Pfx file)
+                # }
+                'V-253435' = @{
+                    OptionValue = 'sra' # Built-in admin account name
                 }
-                'V-253427.b' = @{
-                    Location = 'LocalMachine\Root' # DOD Root CA 4
+                'V-253436' = @{
+                    OptionValue = 'operator' # Built-in guest account name
                 }
-                'V-253427.c' = @{
-                    Location = 'LocalMachine\Root' # DOD Root CA 5
-                }
-                'V-253427.d' = @{
-                    Location = 'LocalMachine\Root' # DOD Root CA 6
-                }
+                
             }
             SkipRule = @(
-
-                # AC
-                # 'V-254365',
-                # 'V-253269',
-                # 'V-253271',
-                # 'V-253274',
-                # 'V-253297',
-                # 'V-253298',
-                # 'V-253299',
-                # 'V-253310',
-                # 'V-253315',
-                # 'V-253328',
-                # 'V-253373',
-                # 'V-253405',
-                # 'V-253406',
-                # 'V-253422',
-                # 'V-253424',
-                # 'V-253431',
-                # 'V-253444',
-                # 'V-253445',
-                # 'V-253446',
-                # 'V-253457',
-                # 'V-253479',
-                # 'V-253480',
-                # 'V-253481',
-                # 'V-253482',
-                # 'V-253483',
-                # 'V-253484',
-                # 'V-253485',
-                # 'V-253486',
-                # 'V-253487',
-                # 'V-253488',
-                # 'V-253489',
-                # 'V-253490',
-                # 'V-253491',
-                # 'V-253492',
-                # 'V-253493',
-                # 'V-253494',
-                # 'V-253495',
-                # 'V-253496',
-                # 'V-253497',
-                # 'V-253498',
-                # 'V-253499',
-                # 'V-253500',
-                # 'V-253502',
-                # 'V-253503',
-                # 'V-253504',
-                # 'V-253505',
-                # 'V-253506',
-                # 'V-257770',
 
                 # Custom
                 # 'V-253260.a',  # BitLocker PIN for pre-boot auth
@@ -115,17 +85,16 @@ configuration WindowsClient
 
 WindowsClient
 
-
-# WARNING: Microsoft_Windows_11_STIG: V-253370/RegistryRule/high will be Skipped as specified by the configuration
-# WARNING: Microsoft_Windows_11_STIG: V-253371/RegistryRule/medium will be Skipped as specified by the configuration
+# TODO
 # WARNING: Microsoft_Windows_11_STIG: V-253377/RegistryRule/medium will be Skipped as specified by the configuration
-# WARNING: Microsoft_Windows_11_STIG: V-253380/RegistryRule/medium will be Skipped as specified by the configuration
-# WARNING: Microsoft_Windows_11_STIG: V-253416/RegistryRule/high will be Skipped as specified by the configuration
-# WARNING: Microsoft_Windows_11_STIG: V-253417/RegistryRule/medium will be Skipped as specified by the configuration
-# WARNING: Microsoft_Windows_11_STIG: V-253418/RegistryRule/high will be Skipped as specified by the configuration
-# WARNING: Microsoft_Windows_11_STIG: V-253419/RegistryRule/medium will be Skipped as specified by the configuration
-
-
+# WARNING: Microsoft_Windows_11_STIG: V-253427.a/RootCertificateRule/medium contains an empty Organizational Value,
+# setting rule as Skipped
+# WARNING: Microsoft_Windows_11_STIG: V-253427.b/RootCertificateRule/medium contains an empty Organizational Value,
+# setting rule as Skipped
+# WARNING: Microsoft_Windows_11_STIG: V-253427.c/RootCertificateRule/medium contains an empty Organizational Value,
+# setting rule as Skipped
+# WARNING: Microsoft_Windows_11_STIG: V-253427.d/RootCertificateRule/medium contains an empty Organizational Value,
+# setting rule as Skipped
 # WARNING: Microsoft_Windows_11_STIG: V-253429.a/RootCertificateRule/medium contains an empty Organizational Value,
 # setting rule as Skipped
 # WARNING: Microsoft_Windows_11_STIG: V-253429.b/RootCertificateRule/medium contains an empty Organizational Value,
@@ -134,7 +103,3 @@ WindowsClient
 # setting rule as Skipped
 # WARNING: Microsoft_Windows_11_STIG: V-253430.b/RootCertificateRule/medium contains an empty Organizational Value,
 # setting rule as Skipped
-# WARNING: Microsoft_Windows_11_STIG: V-253435/SecurityOptionRule/medium contains an empty Organizational Value, setting
-# rule as Skipped
-# WARNING: Microsoft_Windows_11_STIG: V-253436/SecurityOptionRule/medium contains an empty Organizational Value, setting
-# rule as Skipped
