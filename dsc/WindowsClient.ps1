@@ -30,6 +30,18 @@ configuration WindowsClient
                 'V-253369.b' = @{
                     ValueData = '2' # Require Virtualization Based Security
                 }
+                'V-253427.a' = @{
+                    ValueData = 'LocalMachine\Root' # DOD Root CA 3
+                }
+                'V-253427.b' = @{
+                    ValueData = 'LocalMachine\Root' # DOD Root CA 4
+                }
+                'V-253427.c' = @{
+                    ValueData = 'LocalMachine\Root' # DOD Root CA 5
+                }
+                'V-253427.d' = @{
+                    ValueData = 'LocalMachine\Root' # DOD Root CA 6
+                }
             }
             SkipRule = @(
 
@@ -112,14 +124,8 @@ WindowsClient
 # WARNING: Microsoft_Windows_11_STIG: V-253417/RegistryRule/medium will be Skipped as specified by the configuration
 # WARNING: Microsoft_Windows_11_STIG: V-253418/RegistryRule/high will be Skipped as specified by the configuration
 # WARNING: Microsoft_Windows_11_STIG: V-253419/RegistryRule/medium will be Skipped as specified by the configuration
-# WARNING: Microsoft_Windows_11_STIG: V-253427.a/RootCertificateRule/medium contains an empty Organizational Value,
-# setting rule as Skipped
-# WARNING: Microsoft_Windows_11_STIG: V-253427.b/RootCertificateRule/medium contains an empty Organizational Value,
-# setting rule as Skipped
-# WARNING: Microsoft_Windows_11_STIG: V-253427.c/RootCertificateRule/medium contains an empty Organizational Value,
-# setting rule as Skipped
-# WARNING: Microsoft_Windows_11_STIG: V-253427.d/RootCertificateRule/medium contains an empty Organizational Value,
-# setting rule as Skipped
+
+
 # WARNING: Microsoft_Windows_11_STIG: V-253429.a/RootCertificateRule/medium contains an empty Organizational Value,
 # setting rule as Skipped
 # WARNING: Microsoft_Windows_11_STIG: V-253429.b/RootCertificateRule/medium contains an empty Organizational Value,
