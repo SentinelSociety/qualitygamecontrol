@@ -55,16 +55,16 @@ configuration WindowsClient
                 # 'V-253430.b' = @{
                 #     Location = 'cert:LocalMachine\disallowed' # DOD CCEB Interoperability Root CA 2 (Certificate Pfx file)
                 # }
+                # TODO Rename account appropiately
                 'V-253435' = @{
                     OptionValue = 'sra' # Built-in admin account name
                 }
+                # TODO Rename account appropiately
                 'V-253436' = @{
                     OptionValue = 'operator' # Built-in guest account name
                 }
-                
             }
             SkipRule = @(
-
                 # Custom
                 # 'V-253260.a',  # BitLocker PIN for pre-boot auth
                 # 'V-253260.b',  # BitLocker PIN for pre-boot auth
