@@ -20,7 +20,7 @@ configuration Chrome
             # }
             OrgSettings = @{
                 'V-221563' = @{
-                    ValueData = '' # a list of administrator-approved extension IDs
+                    ValueData = 'oiigbmnaadbkfbmpbfijlflahbdbdgdf' # a list of administrator-approved extension IDs
                 }
                 'V-221564' = @{
                     ValueData = 'Google Encrypted' # an organization approved encrypted search provider
